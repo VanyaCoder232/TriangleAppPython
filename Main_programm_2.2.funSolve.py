@@ -2,7 +2,7 @@ import tkinter as tk # Что юзали
 from tkinter import END, ttk,Canvas
 from tkinter import Listbox, Variable
 import math
-# A:float=36.86989764584401,B:float=53.130102354155966,C:float=90.0
+
 #Функция рисования треугольника
 def paint_triangle(a:float=3,b:float=3,c:float=3,
 				   A:float=60,B:float=60,C:float=60.0):
@@ -100,8 +100,8 @@ def Solve_Triangle(a,b,c,A,B,C):
 		B=math.asin((b * math.sin(A)) / a)
 		C=math.pi - A - B 
 		arr.append(f"""\n1. Найти А по т. косинусов:\n A = arccos( (b^2 + c^2 - a^2) / (2*b*c) ) \n
-2. Найти B по т. синусов: \n B = arcsin(b * math.sin(A) / a)\n
-3. Найти С по т. о сумме углов: \n C = 180° - A - B """)
+				2. Найти B по т. синусов: \n B = arcsin(b * math.sin(A) / a)\n
+				3. Найти С по т. о сумме углов: \n C = 180° - A - B """)
 		return a, b, c, math.degrees(A), math.degrees(B), math.degrees(C),arr
 	# Углы по т. синусов
 	if a>0 and A==0:
@@ -158,11 +158,10 @@ def Solve_Triangle(a,b,c,A,B,C):
 			c=math.sin(C) * b / math.sin(B)
 			arr.append(f"""\n\n{len(arr)+1}. Найти c по т. синусов:\n c = sin(C) * b / sin(B)""")
 	return a, b, c, math.degrees(A), math.degrees(B), math.degrees(C),arr
+	
 def CheckAndСhangeFormat(string:str):
-		
 		if string.isdigit():
 			return float(string)
-			 
 
 		elif "," in string:
 			string = string.replace(",",".")
